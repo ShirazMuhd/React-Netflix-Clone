@@ -1,0 +1,26 @@
+body{
+    padding: 0px;
+    margin: 0px;
+
+}
+header{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+header .logo-section img{
+    width: 6rem; 
+    margin-left: 5rem;
+}
+header .avatar-section img{
+    width: 1.5rem;
+    margin-right: 5rem;
+}
