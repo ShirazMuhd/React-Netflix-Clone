@@ -20,4 +20,4 @@ function RowPost() {
     )
 }
 
-export default RowPost
+export default RowPost;
