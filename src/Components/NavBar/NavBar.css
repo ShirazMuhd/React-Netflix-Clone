@@ -23,4 +23,5 @@ header .logo-section img{
 header .avatar-section img{
     width: 1.5rem;
     margin-right: 5rem;
+    border-radius: 50%;
 }
