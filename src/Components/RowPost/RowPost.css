@@ -12,14 +12,12 @@
     width: 20rem;
     height: 12rem;
     margin-right: 1rem;
-    image-rendering: pixelated;
     cursor: pointer;
 }
 .smallPoster{
     width: 10rem;
     height: 6rem;
     margin-right: 1rem;
-    image-rendering: pixelated;
     cursor: pointer;
 }
 .poster:hover{
