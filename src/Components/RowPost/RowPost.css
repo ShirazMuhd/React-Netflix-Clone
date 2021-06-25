@@ -8,6 +8,11 @@
 .row::-webkit-scrollbar{
     display: none;
 }
+.row h2{
+    font-size: 20px;
+    font-weight: lighter;
+
+}
 .poster{
     width: 12rem;
     height: 15rem;

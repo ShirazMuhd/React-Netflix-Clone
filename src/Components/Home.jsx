@@ -5,7 +5,7 @@ import { originals, action, comedy, horror, romantic, documentaries } from './ur
 
 function Home() {
     return (
-        <React.Fragment>
+        <div>
             <Banner />
             <RowPost url={originals} title='Netflix Original' />
             <RowPost url={action} title='Action' isSmall />
@@ -13,7 +13,7 @@ function Home() {
             <RowPost url={horror} title='Horror' isSmall />
             <RowPost url={romantic} title='Romance' isSmall />
             <RowPost url={documentaries} title='Documentaries' isSmall />
-        </React.Fragment>
+        </div>
     )
 }
 
