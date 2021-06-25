@@ -9,19 +9,23 @@
     display: none;
 }
 .poster{
-    width: 20rem;
-    height: 12rem;
+    width: 12rem;
+    height: 15rem;
     margin-right: 1rem;
     cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 6px;
 }
 .smallPoster{
-    width: 10rem;
-    height: 6rem;
+    width: 6rem;
+    height: 10rem;
     margin-right: 1rem;
     cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 6px;
 }
 .poster:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .smallPoster:hover{
     transform: scale(1.1);

@@ -35,11 +35,13 @@ function Watch() {
         <div className="video-container">
           {url && <Youtube opts={opts} videoId={url} />}
         </div>
-        <div>
-          <h1>{movie && movie.title}</h1>
-        </div>
-        <div className="overview">
-          <p>{movie && movie.overview}</p>
+        <div className="movieData">
+          <div>
+            <h1>{movie && movie.title}</h1>
+          </div>
+          <div className="overview">
+            <p>{movie && movie.overview}</p>
+          </div>
         </div>
       </div>
     </div>

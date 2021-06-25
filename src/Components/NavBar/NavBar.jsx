@@ -3,20 +3,32 @@ import './NavBar.css'
 import { selectUserPhoto } from "../../redux/userSlice/userSlice"
 import { useSelector } from "react-redux"
 import { useDispatch } from 'react-redux'
-import { setUser } from "../../redux/userSlice/userSlice"
+import { setUser, setSignout } from "../../redux/userSlice/userSlice"
 import { auth } from "../../firebase"
+import { useHistory } from "react-router-dom"
 
 function NavBar() {
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
-            dispatch(setUser({
-                name: user.displayName,
-                email: user.email,
-                photo: user.photoURL
-            }))
+            if (user) {
+                history.push('/')
+                dispatch(setUser({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+            }
         })
     })
+    const logOut = () => {
+        auth.signOut().then(() => {
+            dispatch(setSignout())
+            history.push('/login')
+        })
+    }
+
     const dispatch = useDispatch()
+    const history = useHistory()
     const userPhoto = useSelector(selectUserPhoto)
 
     return (
@@ -28,10 +40,10 @@ function NavBar() {
                 userPhoto ? (
                     <div className="avatar-section">
                         <img src={userPhoto && userPhoto} alt="" />
-                        <button className="logout">Logout</button>
+                        <button className="logout" onClick={logOut}>Logout</button>
                     </div>
                 ) : (
-                    <button>login</button>
+                    <button onClick={()=> history.push('/login')} className="logout-btn">login</button>
                 )
             }
         </header>
@@ -39,12 +51,3 @@ function NavBar() {
 }
 
 export default NavBar
-// useEffect(()=>{
-//     auth.onAuthStateChanged((user)=>{
-//         if(user){
-//             dispatch(setUser({
-
-//             }))
-//         }
-//     })
-// })

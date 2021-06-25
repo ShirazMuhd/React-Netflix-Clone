@@ -2,9 +2,11 @@ import React,{useEffect, useState} from 'react';
 import {API_KEY,imageUrl} from '../constants/constants'
 import './Banner.css';
 import axios from '../axios/axios'
+import {useHistory} from 'react-router-dom'
 
 function Banner() {
     const [movie, setMovie] = useState({})
+    const history = useHistory()
     useEffect(()=>{
         axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`).then((response)=>{
             setMovie(response.data.results[0])
@@ -17,8 +19,7 @@ function Banner() {
                 <h1 className="movie-title">{movie ? movie.title : 'null'}</h1>
             </div>
             <div className="buttons">
-                <button><i class="fas fa-play"></i> Play</button>
-                <button className="ml-5"><i class="fas fa-list"></i> My List</button>
+                <button onClick={()=> history.push(`/watch/${movie.id}`)}><i className="fas fa-play"></i> Play</button>
             </div>
             <div className="description">
                 <h1 className="movie-description">Watch full Movie</h1>
