@@ -17,8 +17,8 @@ function Login() {
             }))
             history.push('/')
         }).catch((error) => {
-            history.push('/error')
-            console.log(error)
+            history.push('/login')
+            alert(error)
         })
 
     }

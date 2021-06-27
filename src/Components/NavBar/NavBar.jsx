@@ -39,7 +39,7 @@ function NavBar() {
             {
                 userPhoto ? (
                     <div className="avatar-section">
-                        <img src={userPhoto && userPhoto} alt="" />
+                        <img src={userPhoto} alt="profile_img" />
                         <button className="logout" onClick={logOut}>Logout</button>
                     </div>
                 ) : (
